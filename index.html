@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Historia Clínica</title>
+</head>
+<body>
+    <h2 class="container">Historia Clínica</h2>
+    <hr>
+    <main>
+        <form id="datosPersonales" action="?" class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="itemform">
+                        <label for="img"><input type="file" id="imgInput" onchange="mostrarImagen()"></label>
+                        <div class="preview" id="imgPreview"></div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="itemform">
+                        <label for="cedula" class="form-label col-md-8">N° Cédula: 
+                            <input type="text" name="cedula" id="cedula" class="form-control">
+                        </label>
+                    </div>
+                    <div class="itemform">
+                        <label for="nombres" class="form-label col-md-8">
+                            Nombres: <input type="text" name="nom" id="nombre" class="form-control"> 
+                        </label>
+                    </div>
+                    <div class="itemform">
+                        <label for="apellidos" class="form-label col-md-8">Apellidos: 
+                            <input type="text" name="ape" id="apellido" class="form-control">
+                        </label>
+                    </div>
+                    <div class="itemform">
+                        <label for="direccion"class="form-label col-md-8" >Dirección:
+                            <input type="text" name="direcc" id="direccion" class="form-control">
+                        </label>
+                    </div>
+                    <div class="itemform">
+                        <label for="telefono"class="form-label col-md-8" >Teléfono: 
+                            <input type="number" name="telf" id="telefono" class="form-control">
+                        </label>
+                    </div>
+                    <div class="itemform">
+                        <label for="fecha-nacimiento" class="form-label">Fecha de Nacimiento:  
+                            <input type="date" id="fech-nac" class="col-md-8">
+                        </label>
+                    </div>
+                    <div class="itemform">
+                        <h4>Género</h4><br>
+                        <label for="genero_m" class="form-label">
+                            <input id="genero_m" type="radio" name="genero" value="Masculino" class="form-check-input">Masculino</label><br>
+                        <label for="genero_f"class="form-label">
+                            <input id="genero_f" type="radio" name="genero" value="Femenino" class="form-check-input">Femenino</label><br>
+                        <label for="otro"class="form-label">
+                            <input id="otro" type="radio" name="genero" value="Otro" class="form-check-input">Otro</label>
+                    </div>
+                    <div class="itemform">
+                        <h4>Alergias</h4><br>
+                        <label for="alergia_si" class="form-label">
+                            <input type="radio" name="si-no" id="alergia_si" value="SI" class="form-check-input">SI</label><br>
+                        <label for="alergia_no" class="form-label">
+                            <input type="radio" name="si-no" id="alergia_no" value="NO" class="form-check-input">NO</label>
+                    </div>
+                    <div class="itemform">
+                        <h4>Lugar de Nacimiento</h4>
+                        <label for="paises"><select name="paises" id="pais" class="form-select col-md-6" onchange="actualizarCiudades()">
+                            <option value="0">Seleccionar</option>
+                            <option value="ecuador">Ecuador</option>
+                            <option value="colombia">Colombia</option>
+                            <option value="peru">Perú</option>
+                        </select></label>
+                        <label for="ciudad"><select name="ciudades" id="ciudad" class="form-select col-md-6">
+                            <option value="-">-</option>
+                        </select></label>
+                    </div>
+                    <div class="itemform">
+                        <label for=""></label>
+                    </div>
+                    <div class="itemform">
+                        <label for="cargar">
+                            <input type="button" name="carga" id="cargarPaciente" value="Cargar Paciente" onclick="actualizarTabla()" class="btn btn-primary">
+                        </label><br><br>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <div class="tablaPacientes container">
+            <div class="col-md-12">
+                <table id="tabla" class="table">
+                    <!-- <caption>PACIENTES REGISTRADOS</caption> -->
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Edad</th>
+                            <th>Género</th>
+                            <th>Alergias</th>
+                            <th>Lugar de Nacimiento</th>
+                            <th>Fecha de Consulta</th>
+                        </tr>
+                        <tbody id="cuerpoTabla"></tbody>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Pie de pagina -->
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>
