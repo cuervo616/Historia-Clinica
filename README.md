@@ -1,2 +1,2 @@
 # Historia-Clinica
-Practica de HTML, CSS, JAVASCRIPT, responsive usando bootstrap
+Práctica de HTML, CSS, JAVASCRIPT, responsive usando bootstrap
